@@ -15,17 +15,36 @@ class HomePage extends StatelessWidget {
                         decoration: BoxDecoration(
                             boxShadow: [
                                 BoxShadow(
-                                    color: Color(0xff1D1617).withOpacity(0.11),
+                                    color: Color(0xff1D1617).withValues(alpha: 0.11),
                                     blurRadius: 40,
                                     spreadRadius: 0.0, 
                                 )
                             ]
                         ),
-                        child :TextField(
+                        child: TextField(
                         decoration: InputDecoration(
                            filled: true, 
                            fillColor: Colors.white,
                            contentPadding: EdgeInsets.all(15),
+                           prefixIcon: Padding(
+                             padding: const EdgeInsets.all(12.0),
+                             child: SvgPicture.asset('assets/icons/Search.svg'),
+                           ),
+                           suffixIcon: IntrinsicHeight(
+                             child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                               children: [
+                                  VerticalDivider(
+                                      color: Color(0xffDDDADA),
+                                      thickness: 0.1,
+                                  ),
+                                  Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: SvgPicture.asset('assets/icons/filter.svg'),
+                                  )
+                               ],
+                             ),
+                           ),
                            border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15), 
                             borderSide: BorderSide.none
